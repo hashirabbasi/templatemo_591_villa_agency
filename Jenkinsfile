@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    writeFile file: 'Dockerfil
+                    writeFile file: 'Dockerfile', text: '''
                         FROM nginx:alpine
                         COPY . /usr/share/nginx/html
                         EXPOSE 80
