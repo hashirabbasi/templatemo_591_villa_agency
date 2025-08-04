@@ -8,16 +8,10 @@ pipeline {
     }
 
     stages {
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/hashirabbasi/templatemo_591_villa_agency.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 script {
-                    writeFile file: 'Dockerfile', text: '''
+                    writeFile file: 'Dockerfil
                         FROM nginx:alpine
                         COPY . /usr/share/nginx/html
                         EXPOSE 80
@@ -49,3 +43,4 @@ pipeline {
         }
     }
 }
+
